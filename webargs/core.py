@@ -108,6 +108,8 @@ def get_value(d, name, multiple):
             return d.getall(name)
         elif isinstance(val, (list, tuple)):
             return val
+        elif val == Missing:
+            return []
         else:
             return [val]
     return val
